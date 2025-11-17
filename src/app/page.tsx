@@ -1,5 +1,7 @@
 import Card from "../components/Card";
 import DocumentTitleCounter from "../components/DocumentTitleCounter";
+import Timer from "../components/Timer";
+import Toggle from "../components/Toggle";
 
 export default function Home() {
   const books = [
@@ -24,7 +26,8 @@ export default function Home() {
           </Card>
         ))}
       </div>
-      <DocumentTitleCounter />
+      <Toggle />
+      <Timer />
     </main>
   );
 }
