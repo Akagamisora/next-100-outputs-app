@@ -1,4 +1,5 @@
 import Card from "../components/Card";
+import EffectBasic from "../components/EffectBasic";
 
 export default function Home() {
   const books = [
@@ -23,6 +24,7 @@ export default function Home() {
           </Card>
         ))}
       </div>
+      <EffectBasic />
     </main>
   );
 }
