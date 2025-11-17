@@ -1,5 +1,5 @@
 import Card from "../components/Card";
-import EffectBasic from "../components/EffectBasic";
+import DocumentTitleCounter from "../components/DocumentTitleCounter";
 
 export default function Home() {
   const books = [
@@ -24,7 +24,7 @@ export default function Home() {
           </Card>
         ))}
       </div>
-      <EffectBasic />
+      <DocumentTitleCounter />
     </main>
   );
 }
