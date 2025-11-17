@@ -5,6 +5,10 @@ export default function Home() {
       <p className="text-xl text-gray-500 mt-4">
         Step 2: React & Tailwind Basics
       </p>
+
+      <div className="mt-8 w-64 h-32 bg-white p-4 rounded-lg shadow-md">
+        Test Card
+      </div>
     </main>
   );
 }
