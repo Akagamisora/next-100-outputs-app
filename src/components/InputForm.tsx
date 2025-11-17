@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function InputForm() {
   const [inputValue, setInputValue] = useState<string>("");
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
 
