@@ -2,8 +2,13 @@
 
 import { useState } from "react";
 
+type Task = {
+  id: number;
+  text: string;
+};
+
 export default function TodoList() {
-  const [tasks, setTasks] = useState<string[]>([]);
+  const [tasks, setTasks] = useState<Task[]>([]);
   const [newTask, setNewTask] = useState<string>("");
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -13,8 +18,17 @@ export default function TodoList() {
   const handleAddTask = () => {
     if (newTask.trim() === "") return;
 
-    setTasks([...tasks, newTask]);
+    const taskToAdd: Task = {
+      id: Date.now(),
+      text: newTask,
+    };
+    setTasks([...tasks, taskToAdd]);
     setNewTask("");
+  };
+
+  const handleDeleteTask = (idToDelete: number) => {
+    const remainingTasks = tasks.filter((task) => task.id !== idToDelete);
+    setTasks(remainingTasks);
   };
 
   return (
@@ -35,8 +49,16 @@ export default function TodoList() {
         </button>
       </div>
       <ul className="list-disc list-inside mt-4 space-y-1">
-        {tasks.map((task, index) => (
-          <li key={index}>{task}</li>
+        {tasks.map((task) => (
+          <li key={task.id} className="flex justify-between items-center">
+            <span>{task.text}</span>
+            <button
+              onClick={() => handleDeleteTask(task.id)}
+              className="bg-red-500 text-ehite px-2 py-1 rounded text-xs"
+            >
+              Delete
+            </button>
+          </li>
         ))}
       </ul>
     </div>
