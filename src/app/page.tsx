@@ -1,5 +1,5 @@
 import Card from "../components/Card";
-import DocumentTitleCounter from "../components/DocumentTitleCounter";
+import Link from "next/link";
 import Timer from "../components/Timer";
 import Toggle from "../components/Toggle";
 
@@ -15,6 +15,10 @@ export default function Home() {
       <p className="text-xl text-gray-500 mt-4">
         Step 2: React & Tailwind Basics
       </p>
+
+      <Link href="/about" className="mt-4 text-blue-500 hover:underline">
+        Aboutページへ
+      </Link>
 
       <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
         {books.map((book) => (
