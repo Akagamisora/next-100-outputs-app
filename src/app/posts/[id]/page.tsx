@@ -1,9 +1,18 @@
 import React from "react";
+import type { Metadata } from "next";
 
 type Props = {
   params: Promise<{ id: string }>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  return {
+    title: `Post ${id} Details | 100Outputs`,
+    description: `This is the details page of post ${id}.`,
+  };
+}
 
 export default async function PostPage({ params, searchParams }: Props) {
   const { id } = await params;
